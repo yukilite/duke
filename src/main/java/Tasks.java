@@ -8,31 +8,28 @@ public class Tasks {
 
     public Tasks(String description, String type) {
         this.description = description;
-        this.taskNumber = totalTasks;
-        this.isDone = false;
-        this.type = type;
         totalTasks += 1;
+        this.taskNumber = totalTasks;
+        this.type = type;
+
     }
 
     public String getStatusIcon() {
         return (isDone ? "\u2713" : "\u2718"); //return tick or X symbols
     }
 
-    public String markAsDone () {
+    public void markAsDone (boolean isDone) {
         this.isDone = true;
-        return ("[" + type + "] " + "[" + this.getStatusIcon() + "]" + " " + this.description);
     }
-
     public static int getTotalTask() {
         return totalTasks;
     }
     public int getTaskNumber() {
         return taskNumber;
     }
-
-
+    @Override
     public String toString() {
-        return "  [" + type + "]" + "[" + getStatusIcon() + "] " + description;
+        return "[" + type + "]" + "[" + getStatusIcon() + "] " + description;
     }
 
 }
