@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Arrays;
 
-public class Duke{
+public class Duke {
     public static void main(String[] args) {
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
@@ -15,68 +15,99 @@ public class Duke{
                 + "____________________________________________________________\n";
         System.out.println(lvlzero);
 
-        Task[] listOfTasks = new Task[100];
+        Tasks[] listOfTasks = new Tasks[100];
         final String COMMAND_LIST_WORD = "list";
         final String COMMAND_DONE_WORD = "done";
+        final String COMMAND_EVENT_WORD = "event";
+        final String COMMAND_DEADLINE_WORD = "deadline";
+        final String COMMAND_TODO_WORD = "todo";
         final String COMMAND_BYE_WORD = "bye";
+        final String MESSAGE_LIST_TASKS = " Here are the tasks in your list:";
+        final String MESSAGE_ADD_TASK = " Got it. I've added this task:";
+        final String MESSAGE_MARK_DONE = " Nice! I've marked this task as done:";
         final String MESSAGE_GOODBYE = " Bye. Hope to see you again soon!";
         final String divider = "____________________________________________________________";
         int count = 0;
+        String description = null;
+        String by;
+        String date;
 
         Scanner in = new Scanner(System.in);
 
         while (true) {
-            String commandType = in.nextLine();
-            if (commandType.startsWith(COMMAND_DONE_WORD)) {
-                String[] arrOfCommandType = commandType.split(" ");
-                String StringID = arrOfCommandType[1];
-                int ID = Integer.parseInt(StringID) - 1;
+            String firstCommandType = null;
+            String secondCommandType = null;
+            String inputLine = in.nextLine();
+
+            String[] commandType = inputLine.split(" ", 2);
+            if (commandType.length > 1) {
+                firstCommandType = commandType[0];
+                secondCommandType = commandType[1];
+            }
+            else {
+                firstCommandType = commandType[0];
+                secondCommandType = "";
+            }
+
+            switch (firstCommandType) {
+            case COMMAND_LIST_WORD:
                 System.out.println(divider);
-                System.out.println(" Nice! I've marked this task as done:");
-                System.out.println("\t" + listOfTasks[ID].markAsDone());
+                System.out.println(MESSAGE_LIST_TASKS);
+                for (int i = 0; i < Tasks.getTotalTask(); ++i) {
+                    System.out.print(i);
+                    System.out.print(". [" + listOfTasks[i].getStatusIcon() + "] " + listOfTasks[i].description + "\n");
+                }
                 System.out.println(divider);
                 break;
-            }
-            switch (commandType) {
-                case COMMAND_LIST_WORD:
-                    System.out.println(divider);
-                    for (int i = 1; i <= count; ++i) {
-                        System.out.print(i);
-                        System.out.print(". ["+ listOfTasks[i-1].getStatusIcon() + "] " + listOfTasks[i-1].description + "\n");
-                    }
-                    System.out.println(divider);
-                    break;
-                case COMMAND_BYE_WORD:
-                    System.out.println(divider);
-                    System.out.println(MESSAGE_GOODBYE);
-                    System.out.println(divider);
-                    break;
-                default:
-                    System.out.println(divider);
-                    System.out.println(" added: " + commandType);
-                    System.out.println(divider);
-                    listOfTasks[count] = new Task(commandType);
-                    count += 1;
+            case COMMAND_BYE_WORD:
+                System.out.println(divider);
+                System.out.println(MESSAGE_GOODBYE);
+                System.out.println(divider);
+                break;
+            case COMMAND_DONE_WORD:
+                int ID = Integer.parseInt(secondCommandType) - 1;
+                listOfTasks[ID].markAsDone();
+                System.out.println(divider);
+                System.out.println(MESSAGE_MARK_DONE);
+                System.out.println("\t\t" + listOfTasks[ID].toString());
+                System.out.println(divider);
+                break;
+            case COMMAND_EVENT_WORD:
+                String[] events = secondCommandType.split("/at");
+                Event newEvent = new Event(events[0], events[1]);
+                System.out.println(divider);
+                System.out.println(MESSAGE_ADD_TASK+"\n"+ newEvent);
+                printTaskCount();
+                System.out.println(divider);
+                listOfTasks[Tasks.getTotalTask() - 1] = newEvent;
+                break;
+            case COMMAND_DEADLINE_WORD:
+                String[] deadlines = secondCommandType.split("/by");
+                Deadline newDeadLine = new Deadline(deadlines[0], deadlines[1]);
+                System.out.println(divider);
+                System.out.println(MESSAGE_ADD_TASK+"\n"+newDeadLine);
+                printTaskCount();
+                System.out.println(divider);
+                listOfTasks[Tasks.getTotalTask()] = newDeadLine;
+                break;
+            case COMMAND_TODO_WORD:
+                description = secondCommandType;
+                Todo newToDo = new Todo(description, "T");
+                System.out.println(divider);
+                System.out.println(MESSAGE_ADD_TASK+"\n"+newToDo);
+                printTaskCount();
+                System.out.println(divider);
+                listOfTasks[Tasks.getTotalTask() - 1] = newToDo;
+                break;
+            default:
+               break;
             }
         }
     }
 
-    private static class Task {
-        protected String description;
-        protected boolean isDone;
+    private static void printTaskCount() {
 
-        public Task(String description) {
-            this.description = description;
-            this.isDone = false;
-        }
+        System.out.println(" Now you have " + Tasks.getTotalTask()+ " tasks in the list.");
 
-        public String getStatusIcon() {
-            return (isDone ? "\u2713" : "\u2718"); //return tick or X symbols
-        }
-
-        public String markAsDone () {
-            this.isDone = true;
-            return ("[" + this.getStatusIcon() + "]" + " " + this.description);
-        }
     }
 }
