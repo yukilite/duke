@@ -50,31 +50,26 @@ public class Duke {
 
             switch (firstCommandType) {
             case COMMAND_LIST_WORD:
-                System.out.println(divider);
-                System.out.println(MESSAGE_LIST_TASKS);
+                printMessage(MESSAGE_LIST_TASKS, divider);
                 for (int i = 0; i < Tasks.getTotalTask(); ++i) {
                     System.out.print("  " + listOfTasks[i].getTaskNumber()+ ". " + listOfTasks[i] + "\n");
                 }
                 System.out.println(divider);
                 break;
             case COMMAND_BYE_WORD:
-                System.out.println(divider);
-                System.out.println(MESSAGE_GOODBYE);
+                printMessage(MESSAGE_GOODBYE, divider);
                 System.out.println(divider);
                 break;
             case COMMAND_DONE_WORD:
                 int ID = Integer.parseInt(secondCommandType) - 1;
                 listOfTasks[ID].markAsDone(true);
-                System.out.println(divider);
-                System.out.println(MESSAGE_MARK_DONE);
-                System.out.println("\t\t" + listOfTasks[ID].toString());
-                System.out.println(divider);
+                printMessage(MESSAGE_MARK_DONE, divider);
+                printMessage(divider, "\t\t" + listOfTasks[ID].toString());
                 break;
             case COMMAND_EVENT_WORD:
                 String[] events = secondCommandType.split("/at");
                 Event newEvent = new Event(events[0], events[1]);
-                System.out.println(divider);
-                System.out.println(MESSAGE_ADD_TASK+ "\n" + "  " + newEvent);
+                printMessage(MESSAGE_ADD_TASK+ "\n" + "  " + newEvent, divider);
                 printTaskCount();
                 System.out.println(divider);
                 listOfTasks[Tasks.getTotalTask() - 1] = newEvent;
@@ -82,8 +77,7 @@ public class Duke {
             case COMMAND_DEADLINE_WORD:
                 String[] deadlines = secondCommandType.split("/by");
                 Deadline newDeadLine = new Deadline(deadlines[0], deadlines[1]);
-                System.out.println(divider);
-                System.out.println(MESSAGE_ADD_TASK+ "\n" + "  " + newDeadLine);
+                printMessage(MESSAGE_ADD_TASK+ "\n" + "  " + newDeadLine, divider);
                 printTaskCount();
                 System.out.println(divider);
                 listOfTasks[Tasks.getTotalTask()] = newDeadLine;
@@ -91,8 +85,7 @@ public class Duke {
             case COMMAND_TODO_WORD:
                 description = secondCommandType;
                 Todo newToDo = new Todo(description, "T");
-                System.out.println(divider);
-                System.out.println(MESSAGE_ADD_TASK+ "\n" + "  " + newToDo);
+                printMessage(MESSAGE_ADD_TASK+ "\n" + "  " + newToDo, divider);
                 printTaskCount();
                 System.out.println(divider);
                 listOfTasks[Tasks.getTotalTask() - 1] = newToDo;
@@ -101,6 +94,11 @@ public class Duke {
                break;
             }
         }
+    }
+
+    private static void printMessage(String msg, String divider) {
+        System.out.println(divider);
+        System.out.println(msg);
     }
 
     private static void printTaskCount() {
