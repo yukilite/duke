@@ -14,6 +14,9 @@ public class Tasks {
 
     }
 
+    public Tasks(String description) {
+    }
+
     public String getStatusIcon() {
         return (isDone ? "\u2713" : "\u2718"); //return tick or X symbols
     }
