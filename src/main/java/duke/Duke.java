@@ -1,10 +1,17 @@
 package duke;
 
+import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Arrays;
+import java.io.File;
+import java.io.IOException;
+
 
 public class Duke {
+    private static String filePath;
+
     public static void main(String[] args) throws DukeException {
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
@@ -60,6 +67,7 @@ public class Duke {
                 //    System.out.println(divider);
                     break;
                 case COMMAND_BYE_WORD:
+                    saveDataToFile(listOfTasks);
                     printMessage(MESSAGE_GOODBYE, divider);
                   //  System.out.println(divider);
                     break;
@@ -120,5 +128,18 @@ public class Duke {
 
     private static void printTaskCount() {
         System.out.println(" Now you have " + Tasks.getTotalTask()+ " tasks in the list.");
+    }
+    private static void saveDataToFile(ArrayList<Tasks> listOfTasks) {
+        try {
+            FileWriter fileWriter = new FileWriter(filePath);
+            for (Tasks tasks: listOfTasks) {
+                fileWriter.write(tasks.getFileString() + "\n");
+            }
+            fileWriter.close();
+            System.out.println("The tasks have been saved to disk.")
+
+        } catch (IOException e) {
+            System.out.println("An error occurred when saving data to file.");
+        }
     }
 }
