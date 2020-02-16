@@ -176,7 +176,7 @@ public class Duke {
                 fileWriter.write(tasks.getFileString() + "\n");
             }
             fileWriter.close();
-            System.out.println("The tasks have been saved to disk.")
+            System.out.println("The tasks have been saved to disk.");
 
         } catch (IOException e) {
             System.out.println("An error occurred when saving data to file.");
