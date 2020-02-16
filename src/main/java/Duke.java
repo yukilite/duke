@@ -31,6 +31,7 @@ public class Duke {
     String by;
     String date;
     private static int totalTasks = 0;
+    private static String filePath;
 
     public static void main(String[] args) throws DukeException {
         String logo = " ____        _        \n"
@@ -160,6 +161,16 @@ public class Duke {
         System.out.println(" Now you have " + totalTasks + " task(s) in the list. ");
     }
     
+    private static void saveDataToFile(ArrayList<Tasks> listOfTasks) {
+        try {
+            FileWriter fileWriter = new FileWriter(filePath);
+            for (Tasks tasks: listOfTasks) {
+                fileWriter.write(tasks.getFileString() + "\n");
+            }
+            fileWriter.close();
+            System.out.println("The tasks have been saved to disk.")
+
+
     private static void saveDataToFile(ArrayList<Tasks> listOfTasks) {
         try {
             FileWriter fileWriter = new FileWriter(filePath);
