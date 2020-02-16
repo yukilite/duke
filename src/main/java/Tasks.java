@@ -1,18 +1,18 @@
-package duke;
 
 public class Tasks {
 
     protected String description;
     protected boolean isDone;
-    protected int taskNumber;
+    protected int number;
     protected String type;
-    private static int totalTasks = 0;
+
+    private static int currTaskNumber = 1;
 
     public Tasks(String description, String type) {
         this.description = description;
-        totalTasks += 1;
-        this.taskNumber = totalTasks;
         this.type = type;
+        this.number = currTaskNumber;
+        currTaskNumber += 1;
 
     }
 
@@ -26,12 +26,14 @@ public class Tasks {
     public void markAsDone (boolean isDone) {
         this.isDone = true;
     }
-    public static int getTotalTask() {
-        return totalTasks;
-    }
     public int getTaskNumber() {
-        return taskNumber;
+        return number;
     }
+    public void setTaskNumber() {
+        this.number = number;
+    }
+
+
     @Override
     public String toString() {
         return "[" + type + "]" + "[" + getStatusIcon() + "] " + description;

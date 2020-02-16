@@ -1,4 +1,3 @@
-package duke;
 
 public class Event extends Tasks {
     protected String date;
@@ -12,7 +11,7 @@ public class Event extends Tasks {
     }
     @Override
     public String toString() {
-        return super.toString() + " (at: " + date + ")";
+        return super.toString() + " (at:" + date + ")";
     }
 }
 

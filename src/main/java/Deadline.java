@@ -1,5 +1,3 @@
-package duke;
-
 public class Deadline extends Tasks {
     protected String by;
 
@@ -17,7 +15,7 @@ public class Deadline extends Tasks {
 
     @Override
     public String toString() {
-        return super.toString() + " (by: " + by + ")";
+        return super.toString() + " (by:" + by + ")";
     }
 }
 
