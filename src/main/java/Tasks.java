@@ -38,5 +38,6 @@ public class Tasks {
     public String toString() {
         return "[" + type + "]" + "[" + getStatusIcon() + "] " + description;
     }
+    abstract public String getFileString();
 
 }
