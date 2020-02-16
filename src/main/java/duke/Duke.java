@@ -13,7 +13,6 @@ public class Duke {
 
     private static String filePath;
 
-
     private static final String COMMAND_LIST_WORD = "list";
     private static final String COMMAND_DONE_WORD = "done";
     private static final String COMMAND_EVENT_WORD = "event";
@@ -168,7 +167,7 @@ public class Duke {
                 fileWriter.write(tasks.getFileString() + "\n");
             }
             fileWriter.close();
-            System.out.println("The tasks have been saved to disk.")
+            System.out.println("The tasks have been saved to disk.");
 
         } catch (IOException e) {
             System.out.println("An error occurred when saving data to file.");
