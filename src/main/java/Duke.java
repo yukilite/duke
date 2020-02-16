@@ -158,15 +158,6 @@ public class Duke {
         totalTasks -= 1;
         System.out.println(" Now you have " + totalTasks + " task(s) in the list. ");
     }
-    
-    private static void saveDataToFile(ArrayList<Tasks> listOfTasks) {
-        try {
-            FileWriter fileWriter = new FileWriter(filePath);
-            for (Tasks tasks: listOfTasks) {
-                fileWriter.write(tasks.getFileString() + "\n");
-            }
-            fileWriter.close();
-            System.out.println("The tasks have been saved to disk.")
 
 
     private static void saveDataToFile(ArrayList<Tasks> listOfTasks) {
@@ -182,5 +173,6 @@ public class Duke {
             System.out.println("An error occurred when saving data to file.");
         }
     }
+
 
 }
