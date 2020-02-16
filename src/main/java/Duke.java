@@ -12,7 +12,6 @@ import java.io.IOException;
 public class Duke {
 
     private static String filePath;
-
     private static final String COMMAND_LIST_WORD = "list";
     private static final String COMMAND_DONE_WORD = "done";
     private static final String COMMAND_EVENT_WORD = "event";
@@ -31,7 +30,6 @@ public class Duke {
     String by;
     String date;
     private static int totalTasks = 0;
-    private static String filePath;
 
     public static void main(String[] args) throws DukeException {
         String logo = " ____        _        \n"
