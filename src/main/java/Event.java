@@ -16,5 +16,9 @@ public class Event extends Tasks {
     public String toString() {
         return super.toString() + " (at:" + date + ")";
     }
+    @Override
+    public String getFileContents() {
+        return String.format("E|%s|%s|%s", this.isDone, this.description, this.date);
+    }
 }
 

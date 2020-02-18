@@ -8,4 +8,8 @@ public class Todo extends Tasks {
         super(description, type);
 
     }
+    @Override
+    public String getFileContents() {
+        return String.format("T|%s|%s", this.isDone, this.description);
+    }
 }

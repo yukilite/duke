@@ -1,5 +1,5 @@
 
-public class Tasks {
+public abstract class Tasks {
 
     protected String description;
     protected boolean isDone;
@@ -38,5 +38,7 @@ public class Tasks {
     public String toString() {
         return "[" + type + "]" + "[" + getStatusIcon() + "] " + description;
     }
-    
+
+    abstract public String getFileContents();
+
 }
