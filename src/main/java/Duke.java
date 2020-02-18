@@ -46,7 +46,7 @@ public class Duke {
 
         ArrayList<Tasks> listOfTasks = new ArrayList<Tasks>();
         //Tasks[] listOfTasks = new Tasks[100];
-        readDataFromFile(listOfTasks);
+        //readDataFromFile(listOfTasks);
         Scanner in = new Scanner(System.in);
 
         while (true) {
@@ -75,7 +75,7 @@ public class Duke {
                 //    System.out.println(divider);
                     break;
                 case COMMAND_BYE_WORD:
-                    saveDataToFile(listOfTasks);
+                   // saveDataToFile(listOfTasks);
                     printMessage(MESSAGE_GOODBYE, divider);
                   //  System.out.println(divider);
                     break;
@@ -159,38 +159,38 @@ public class Duke {
         System.out.println(" Now you have " + totalTasks + " task(s) in the list. ");
     }
 
-    private static void readDataFromFile(ArrayList<Tasks> listOfTasks) {
-        try {
-            if (Files.notExists(Paths.get(filePath))) {
-                filePath = DUKE_FILE_PATH;
-            }
-            File f = new File (filePath);
-            if (f.createNewFile()) {
-                System.out.println("File created at %s.\n", DUKE_FILE_PATH);
-            }
-            Scanner fileScanner = new Scanner(f);
-            while (fileScanner.hasNext()) {
-                System.out.println(fileScanner.nextLine());
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found.");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    private static void readDataFromFile(ArrayList<Tasks> listOfTasks) {
+//        try {
+//            if (Files.notExists(Paths.get(filePath))) {
+//                filePath = DUKE_FILE_PATH;
+//            }
+//            File f = new File (filePath);
+//            if (f.createNewFile()) {
+//                System.out.println("File created at %s.\n", DUKE_FILE_PATH);
+//            }
+//            Scanner fileScanner = new Scanner(f);
+//            while (fileScanner.hasNext()) {
+//                System.out.println(fileScanner.nextLine());
+//            }
+//        } catch (FileNotFoundException e) {
+//            System.out.println("File not found.");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
-    private static void saveDataToFile(ArrayList<Tasks> listOfTasks) {
-        try {
-            FileWriter fileWriter = new FileWriter(filePath);
-            for (Tasks tasks: listOfTasks) {
-                fileWriter.write(tasks.getFileContents() + "\n");
-            }
-            fileWriter.close();
-            System.out.println("The tasks have been saved to disk.");
-
-        } catch (IOException e) {
-            System.out.println("An error occurred when saving data to file.");
-        }
-    }
+//    private static void saveDataToFile(ArrayList<Tasks> listOfTasks) {
+//        try {
+//            FileWriter fileWriter = new FileWriter(filePath);
+//            for (Tasks tasks: listOfTasks) {
+//                fileWriter.write(tasks.getFileContents() + "\n");
+//            }
+//            fileWriter.close();
+//            System.out.println("The tasks have been saved to disk.");
+//
+//        } catch (IOException e) {
+//            System.out.println("An error occurred when saving data to file.");
+//        }
+//    }
 
 }
