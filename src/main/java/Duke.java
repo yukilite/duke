@@ -1,6 +1,4 @@
 
-package duke;
-
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -34,7 +32,7 @@ public class Duke {
     String date;
     private static int totalTasks = 0;
 
-    public static void main(String[] args) throws DukeException, IOException {
+    public static void main(String[] args) throws DukeException {
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
                 + "| | | | | | | |/ / _ \\\n"
@@ -79,13 +77,13 @@ public class Duke {
                     break;
                 case COMMAND_BYE_WORD:
 
-                    try {
-                        saveDataToFile(listOfTasks);
+//                    try {
+                  //      saveDataToFile(listOfTasks);
                         printMessage(MESSAGE_GOODBYE, divider);
                         //  System.out.println(divider);
-                    } catch (IOException e) {
-                        System.out.println("Faced an error - File cannot be saved.");
-                    }
+//                    } catch (IOException e) {
+//                        System.out.println("Faced an error - File cannot be saved.");
+//                    }
                     break;
                 case COMMAND_DONE_WORD:
                     int ID = Integer.parseInt(secondCommandType);
