@@ -1,27 +1,10 @@
-import java.io.*;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.Arrays;
-import java.nio.file.Paths;
-import java.nio.file.Files;
 
 public class Duke {
-    private static String filePath;
-    //private static final String DUKE_FILE_PATH = "data/duke.txt";
-    private static final String COMMAND_LIST_WORD = "list";
-    private static final String COMMAND_DONE_WORD = "done";
-    private static final String COMMAND_EVENT_WORD = "event";
-    private static final String COMMAND_DEADLINE_WORD = "deadline";
-    private static final String COMMAND_TODO_WORD = "todo";
-    private static final String COMMAND_DELETE_WORD = "delete";
-    private static final String COMMAND_BYE_WORD = "bye";
-    private static final String MESSAGE_LIST_TASKS = " Here are the tasks in your list:";
-    private static final String MESSAGE_ADD_TASK = " Got it. I've added this task:";
-    private static final String MESSAGE_MARK_DONE = " Nice! I've marked this task as done:";
-    private static final String MESSAGE_GOODBYE = " Bye. Hope to see you again soon!";
+    //private static String filePath;
 
-    private static String divider = "____________________________________________________________";
     private static String description = null;
     private static String deleteIndex = null;
     String by;
@@ -29,17 +12,9 @@ public class Duke {
     private static int totalTasks = 0;
 
     public static void main(String[] args) throws DukeException, IOException {
-        String logo = " ____        _        \n"
-                + "|  _ \\ _   _| | _____ \n"
-                + "| | | | | | | |/ / _ \\\n"
-                + "| |_| | |_| |   <  __/\n"
-                + "|____/ \\__,_|_|\\_\\___|\n";
-        System.out.println("Hello from\n" + logo);
-        String lvlzero = "____________________________________________________________\n"
-                + " Hello! I'm Duke \n"
-                + " What can I do for you?\n"
-                + "____________________________________________________________\n";
-        System.out.println(lvlzero);
+
+        Messages.printWelcomeMessage(Messages.logo);
+        Messages.printLogoMessage(Messages.lvlzero);
 
         ArrayList<Tasks> listOfTasks = new ArrayList<Tasks>();
         //Tasks[] listOfTasks = new Tasks[100];
@@ -63,67 +38,63 @@ public class Duke {
 
                 switch (firstCommandType) {
 
-                case COMMAND_LIST_WORD:
-                    printMessage(MESSAGE_LIST_TASKS, divider);
+                case Messages.COMMAND_LIST_WORD:
+                    printMessage(Messages.MESSAGE_LIST_TASKS, Messages.divider);
                     for (int i = 0; i < totalTasks; ++i) {
                         int index = i + 1;
                         System.out.print("  " + index + ". " + listOfTasks.get(i) + "\n");
                     }
                 //    System.out.println(divider);
                     break;
-                case COMMAND_BYE_WORD:
-                    try {
-                        saveDataToFile(listOfTasks);
-                        printMessage(MESSAGE_GOODBYE, divider);
-                        //  System.out.println(divider);
-                    } catch (IOException e) {
-                        System.out.println("Faced an error - File cannot be saved.");
-                    }
+                case Messages.COMMAND_BYE_WORD:
+                    //   saveDataToFile(listOfTasks);
+                    printMessage(Messages.MESSAGE_GOODBYE, Messages.divider);
+                    //  System.out.println(divider);
                     break;
-                case COMMAND_DONE_WORD:
+                case Messages.COMMAND_DONE_WORD:
                     int ID = Integer.parseInt(secondCommandType);
                     ID -= 1;
                     listOfTasks.get(ID).markAsDone(true);
-                    printMessage(MESSAGE_MARK_DONE, divider);
-                    printMessage(divider, "\t\t" + listOfTasks.get(ID).toString());
+                    printMessage(Messages.MESSAGE_MARK_DONE, Messages.divider);
+                    printMessage(Messages.divider, "\t\t" + listOfTasks.get(ID).toString());
                     break;
-                case COMMAND_EVENT_WORD:
+                case Messages.COMMAND_EVENT_WORD:
                     String[] events = secondCommandType.split("/at");
                     if (events[0] == "") {
                         throw new DukeException("☹ OOPS!!! The description of an event cannot be empty.");
                     }
                     Event newEvent = new Event(events[0], events[1]);
-                    printMessage(MESSAGE_ADD_TASK + "\n" + "  " + newEvent, divider);
+                    printMessage(Messages.MESSAGE_ADD_TASK + "\n" + "  " + newEvent, Messages.divider);
                     totalTasks += 1;
                     printTaskCount();
                //     System.out.println(divider);
                     listOfTasks.add(newEvent);
                     break;
-                case COMMAND_DEADLINE_WORD:
+                case Messages.COMMAND_DEADLINE_WORD:
                     String[] deadlines = secondCommandType.split("/by");
                     if (deadlines[0] == "") {
                         throw new DukeException("☹ OOPS!!! The description of a deadline cannot be empty.");
                     }
                     Deadline newDeadLine = new Deadline(deadlines[0], deadlines[1]);
-                    printMessage(MESSAGE_ADD_TASK + "\n" + "  " + newDeadLine, divider);
+                    printMessage(Messages.MESSAGE_ADD_TASK + "\n" + "  " + newDeadLine, Messages.divider);
                     totalTasks += 1;
                     printTaskCount();
                 //    System.out.println(divider);
                     listOfTasks.add(newDeadLine);
                     break;
-                case COMMAND_TODO_WORD:
+                case Messages.COMMAND_TODO_WORD:
                     description = secondCommandType;
                     if (description == "") {
                         throw new DukeException("☹ OOPS!!! The description of a todo cannot be empty.");
                     }
                     Todo newToDo = new Todo(description, "T");
-                    printMessage(MESSAGE_ADD_TASK + "\n" + "  " + newToDo, divider);
+                    printMessage(Messages.MESSAGE_ADD_TASK + "\n" + "  " + newToDo, Messages.divider);
                     totalTasks += 1;
                     printTaskCount();
                 //    System.out.println(divider);
                     listOfTasks.add(newToDo);
                     break;
-                case COMMAND_DELETE_WORD:
+                case Messages.COMMAND_DELETE_WORD:
                     deleteIndex = secondCommandType;
                     if (deleteIndex == "") {
                         throw new DukeException("☹ OOPS!!! The description of a delete cannot be empty.");
@@ -138,11 +109,15 @@ public class Duke {
                     throw new DukeException("☹ OOPS!!! I'm sorry, but I don't know what that means :-(");
                 }
             } catch (DukeException e) {
-                System.out.println(divider);
+                System.out.println(Messages.divider);
                 System.out.println(e);
             }
-            System.out.println(divider);
+            System.out.println(Messages.divider);
         }
+    }
+
+    private static void printLogoMessage(String lvlzero) {
+        System.out.println(lvlzero);
     }
 
     private static void printMessage(String msg, String divider) {
