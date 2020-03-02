@@ -18,12 +18,13 @@ Example of usage:
 
 Expected outcome:
 
->____________________________________________________________ 
->Got it. I've added this task:
->  [T][✘] study for CS2113T
->Now you have 1 task in the list
->____________________________________________________________
-
+>
+____________________________________________________________ 
+Got it. I've added this task:
+  [T][✘] study for CS2113T
+Now you have 1 task in the list
+____________________________________________________________
+>
 ### `deadline` - Creates a Deadline task
 
 This command is created with a description with a deadline date and time.
