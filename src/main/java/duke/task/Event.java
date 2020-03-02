@@ -1,3 +1,5 @@
+package duke.task;
+
 public class Event extends Tasks {
     protected String date;
 

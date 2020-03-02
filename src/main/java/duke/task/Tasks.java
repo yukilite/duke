@@ -1,7 +1,8 @@
+package duke.task;
 
 public abstract class Tasks {
 
-    protected String description;
+    public String description;
     protected boolean isDone;
     protected int number;
     protected String type;
@@ -39,6 +40,6 @@ public abstract class Tasks {
         return "[" + type + "]" + "[" + getStatusIcon() + "] " + description;
     }
 
-    abstract public String getFileContents();
+
 
 }
