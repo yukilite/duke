@@ -12,24 +12,18 @@ public class Parser {
         switch (commandWord.toLowerCase()) {
         case (COMMAND_BYE_WORD):
             return new ExitProgram();
-        break;
         case (COMMAND_LIST_WORD):
             return new ListCommand();
-        break;
         case (COMMAND_DONE_WORD):
-            return new DoneCommand();
-        break;
+            return new DoneCommand(input);
         case (COMMAND_DEADLINE_WORD):
-            return new DeadlineCommand();
-        break;
+            return new DeadlineCommand(input);
         case (COMMAND_EVENT_WORD):
-            return new EventCommand();
-        break;
+            return new EventCommand(input);
         case (COMMAND_DELETE_WORD):
-            return new DeleteCommand();
-        break;
+            return new DeleteCommand(input);
         case (COMMAND_TODO_WORD):
-            return new TodoCommand();
+            return new TodoCommand(input);
         default:
             throw new DukeException(MESSAGE_NO_COMMAND_EXISTS);
         }

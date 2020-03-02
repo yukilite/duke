@@ -2,7 +2,7 @@ package duke.constants;
 
 public class Messages {
 
-    public static final String DUKE_FILE_PATH = "C:\\Users\\user\\Desktop\\duke\\data\\tasks.txt";
+    public static final String DUKE_FILE_PATH = "tasks.txt";
     public static final String COMMAND_LIST_WORD = "list";
     public static final String COMMAND_DONE_WORD = "done";
     public static final String COMMAND_EVENT_WORD = "event";
@@ -45,9 +45,6 @@ public class Messages {
             + " What can I do for you?\n"
             + "____________________________________________________________\n";
 
-    public Messages(String filename) {
-        super(filename);
-    }
 
     public static void printLogoMessage(String lvlzero) {
         System.out.println(lvlzero);

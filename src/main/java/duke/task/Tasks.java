@@ -24,7 +24,7 @@ public abstract class Tasks {
         return (isDone ? "\u2713" : "\u2718"); //return tick or X symbols
     }
 
-    public void markAsDone (boolean isDone) {
+    public void markAsDone () {
         this.isDone = true;
     }
     public int getTaskNumber() {

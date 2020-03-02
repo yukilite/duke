@@ -1,4 +1,3 @@
-
 import duke.commands.Command;
 import duke.exception.DukeException;
 import duke.parser.Parser;
@@ -6,6 +5,8 @@ import duke.storage.Storage;
 import duke.tasklist.TaskList;
 import duke.ui.Ui;
 
+import java.io.IOException;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.ParseException;
 
@@ -75,6 +76,11 @@ public class Duke {
      * @param args The main argument of this program
      */
     public static void main(String[] args) {
+        try {
+            new File(DUKE_FILE_PATH).createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         new Duke(DUKE_FILE_PATH).run();
     }
 

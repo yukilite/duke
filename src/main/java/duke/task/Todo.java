@@ -5,7 +5,7 @@ public class Todo extends Tasks {
     protected String type;
 
     public Todo (String description) {
-        super(description);
+        super(description, "T");
 
     }
     @Override
