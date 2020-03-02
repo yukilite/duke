@@ -135,6 +135,8 @@ ____________________________________________________________
 ```
 ### `delete` - Deletes a task from the list
 
+This command allows the tasks to be deleted from the task list.
+
 Format: `delete <Task Number>`
 
 Example of usage:
@@ -151,8 +153,14 @@ ____________________________________________________________
 ```
 
 
-### `find` - Finds a Task that matches keyword
+### `bye` - Finds a Task that matches keyword
 
-Format: `find <keyword>`
+Format: `bye`
 
 Example of usage:
+`bye`
+
+Expected outcome:
+```
+Bye. Hope to see you again soon!
+```
