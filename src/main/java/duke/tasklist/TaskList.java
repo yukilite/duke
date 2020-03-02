@@ -26,30 +26,35 @@ public class TaskList {
 
     public static void completeTask(int i) {
         list.get(i).markAsDone();
-        System.out.println(Messages.MESSAGE_MARK_DONE+ "\n"+ "  " + list.get(i).toString());
+        System.out.println(Messages.divider + "\n" + Messages.MESSAGE_MARK_DONE+ "\n" + "  " + list.get(i).toString());
+        System.out.println(Messages.divider);
     }
     public static void deleteTask(int i) {
-        System.out.println(Messages.MESSAGE_REMOVED_TASKS + "  " + list.get(i).toString());
+        System.out.println(Messages.divider+ "\n" + Messages.MESSAGE_REMOVED_TASKS + "\n" + "  "+ list.get(i).toString());
         list.remove(i);
         System.out.println(Messages.MESSAGE_LIST_START + list.size() + Messages.MESSAGE_LIST_END);
+        System.out.println(Messages.divider);
     }
 
     public static void addTasks(Tasks t) {
         list.add(t);
         if (list.size() == 1) {
-            System.out.println(Messages.MESSAGE_ADD_TASK +"\n" +  "   " + t.toString() + "\n" + Messages.MESSAGE_LIST_START + list.size() + Messages.MESSAGE_LIST_END);
-
+            System.out.println(Messages.divider + "\n" + Messages.MESSAGE_ADD_TASK +"\n" +  "   " + t.toString() + "\n" + Messages.MESSAGE_LIST_START + list.size() + Messages.MESSAGE_LIST_END);
+            System.out.println(Messages.divider);
         }
         else {
-            System.out.println(Messages.MESSAGE_ADD_TASK+"\n"
+            System.out.println( Messages.divider + "\n" + Messages.MESSAGE_ADD_TASK+"\n"
                     + "   " + t.toString() + "\n" + Messages.MESSAGE_LIST_START + list.size() + Messages.MESSAGE_LIST_END);
+            System.out.println(Messages.divider);
         }
     }
     public static void listTask () {
+        System.out.println(Messages.divider);
         System.out.println(Messages.MESSAGE_LIST_TASKS);
         for (int i = 0; i < list.size(); i++) {
             System.out.println(i+1 + "." + list.get(i).toString());
         }
+        System.out.println(Messages.divider);
     }
 
     public static void find(String match) {
