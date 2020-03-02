@@ -26,7 +26,7 @@ It appears as a `[T]` beside the description to represent a todo task.
 Format:
 `todo <description>`
 
-*`<description>` is the description of the todo
+* `<description>` is the description of the todo
 
 Example of usage: 
 
@@ -49,11 +49,11 @@ It appears as a `[D]` beside the description to represent a deadline task.
 Format: 
 `deadline <description><space></by><date><space><time>`
 
-*`<description>` is the description of the task with a deadline
-*`<space>` represents a white space
-*`</by>` is a **required** parameter
-*`<date>` must follow the dd/mm/yyyy format
-*`<time>` must follow the hhmm format
+* `<description>` is the description of the task with a deadline
+* `<space>` represents a white space
+* `</by>` is a **required** parameter
+* `<date>` must follow the dd/mm/yyyy format
+* `<time>` must follow the hhmm format
 
 Example of usage: 
 
@@ -76,11 +76,11 @@ It appears as a `[E]` beside the description to represent an event task.
 Format: 
 `event <event><space></at><date><space><time>`
 
-*`<event>` is the description of the task
-*`<space>` represents a white space
-*`</at>` is a **required** parameter
-*`<date>` must follow the dd/mm/yyyy format
-*`<time>` must follow the hhmm format
+* `<event>` is the description of the task
+* `<space>` represents a white space
+* `</at>` is a **required** parameter
+* `<date>` must follow the dd/mm/yyyy format
+* `<time>` must follow the hhmm format
 
 Example of usage: 
 
