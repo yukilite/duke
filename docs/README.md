@@ -1,5 +1,8 @@
 # User Guide
 
+## Introduction
+Duke is a command-line interface task manager. You can manage your tasks, set deadlines and view upcoming tasks. The list is then saved automatically when you exit.
+
 ## Features 
 1. Managing tasks 
    Your tasks can be added and deleted using **todo**, **deadline** and **event** Commands.
