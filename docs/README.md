@@ -1,7 +1,14 @@
 # User Guide
 
 ## Features 
-
+1. Managing tasks 
+  * Your tasks can be added and deleted using **todo**, **deadline** and **event** Commands.
+1. Marking your tasks as completed
+  * Track the completion status of your tasks by typing `done` followed by the task number in the command line.
+1. Display all your tasks 
+  * To view the tasks you have so far, type `list` in the command line.
+1. Saving your data
+  * Your tasks and information are stored automatically when you add a task into the program. Upon closing and reopening of Duke, your data is retained. 
 ### Adding Tasks
 There are 3 ways you can add tasks to your task list, namely - todo, deadline or event. More details can be found below.
 
