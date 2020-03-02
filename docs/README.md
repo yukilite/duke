@@ -18,11 +18,11 @@ Example of usage:
 
 Expected outcome:
 
-`____________________________________________________________` 
-`Got it. I've added this task:`
-   `[T][✘] study for CS2113T`
-`Now you have 1 task in the list`
-`____________________________________________________________`
+>`____________________________________________________________` 
+>`Got it. I've added this task:`
+>  `[T][✘] study for CS2113T`
+>`Now you have 1 task in the list`
+>`____________________________________________________________`
 
 ### `deadline` - Creates a Deadline task
 
@@ -35,11 +35,11 @@ Example of usage:
 
 Expected outcome:
 
-`____________________________________________________________` 
-`Got it. I've added this task:`
-  `[D][✘] study (by:Fri 22 May 2020 03:30 pm)`
-`Now you have 2 task in the list`
-`____________________________________________________________`
+>`____________________________________________________________` 
+>`Got it. I've added this task:`
+> `[D][✘] study (by:Fri 22 May 2020 03:30 pm)`
+>`Now you have 2 task in the list`
+>`____________________________________________________________`
 
 ### `event` - Creates a Event task
 
@@ -51,8 +51,8 @@ Example of usage:
 
 Expected outcome:
 
-`____________________________________________________________` 
-`Got it. I've added this task:`
-`   [E][✘] party (at:Sat 23 May 2020 12:30 am)`
-`Now you have 3 task in the list`
-`____________________________________________________________`
+>`____________________________________________________________` 
+>`Got it. I've added this task:`
+>`   [E][✘] party (at:Sat 23 May 2020 12:30 am)`
+>`Now you have 3 task in the list`
+>`____________________________________________________________`
