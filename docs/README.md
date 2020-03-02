@@ -2,18 +2,29 @@
 
 ## Features 
 
-### Feature 1 
-Description of feature.
+### Adding Tasks
 
 ## Usage
 
-### `Keyword` - Describe action
+### `Todo` - Creates a Todo task
 
-Describe action and its outcome.
+This commands adds a todo task to your current list.
 
 Example of usage: 
 
-`keyword (optional arguments)`
+`todo (code for CS2113T)`
+
+Expected outcome:
+
+`outcome`
+
+### `deadline` - Creates a deadline task
+
+This command is created with a description with a deadline date and time.
+
+Example of usage: 
+
+`deadline (study /by 22/05/2020 1530)`
 
 Expected outcome:
 
