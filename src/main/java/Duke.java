@@ -11,6 +11,11 @@ import java.text.ParseException;
 
 import static duke.constants.Messages.*;
 
+/**
+ * Welcome to the Duke, your Task Manager that can help you
+ * with storing tasks as a todo, deadline, or event.
+ *
+ */
 
 public class Duke {
     private Storage storage;
@@ -18,6 +23,10 @@ public class Duke {
     private Ui ui;
     private Parser parser;
 
+    /**
+     * This method initializes variables.
+     * @param filename The name of the file
+     */
     public Duke (String filename) {
         ui = new Ui();
         storage = new Storage(filename);
@@ -29,6 +38,12 @@ public class Duke {
             tasks = new TaskList();
         }
     }
+
+    /**
+     * This method runs the program by scanning in user
+     * input. It looks out for keywords to add, delete, mark as
+     * done, list or find tasks before it exits
+     */
 
     public void run() {
         ui.greet();
@@ -55,6 +70,10 @@ public class Duke {
         }
     }
 
+    /**
+     * This is the main method of the program
+     * @param args The main argument of this program
+     */
     public static void main(String[] args) {
         new Duke(DUKE_FILE_PATH).run();
     }

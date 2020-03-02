@@ -33,6 +33,7 @@ public abstract class Tasks {
     public void setTaskNumber() {
         this.number = number;
     }
+    public abstract String getFileContents();
 
 
     @Override
