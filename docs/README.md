@@ -4,9 +4,9 @@
 1. Managing tasks 
    Your tasks can be added and deleted using **todo**, **deadline** and **event** Commands.
 2. Marking your tasks as completed
-   Track the completion status of your tasks by typing `done` followed by the task number in the command line.
+   Track the completion status of your tasks by using the `done` Command.
 3. Display all your tasks 
-   To view the tasks you have so far, type `list` in the command line.
+   To view the tasks you have so far, use the `list` Command.
 4. Saving your data
    Your tasks and information are stored automatically when you add a task into the program. Upon closing and reopening of Duke, your data is retained. 
 
@@ -27,7 +27,7 @@ Format:
 
 Example of usage: 
 
-`todo <code for CS2113T>`
+`todo code for CS2113T`
 
 Expected outcome:
 
@@ -54,7 +54,7 @@ Format:
 
 Example of usage: 
 
-`deadline <study /by 22/05/2020 1530>`
+`deadline study /by 22/05/2020 1530`
 
 Expected outcome:
 
@@ -81,7 +81,7 @@ Format:
 
 Example of usage: 
 
-`event <party /at 23/05/2020 0030>`
+`event party /at 23/05/2020 0030`
 
 Expected outcome:
 
@@ -103,7 +103,7 @@ Format:
 
 Example of usage: 
 
-`done <2>`
+`done 2`
 
 Expected outcome:
 
@@ -113,3 +113,46 @@ Nice! I've marked this task as done:
   [E][✓] study (by:Fri 22 May 2020 03:30 pm)
 ____________________________________________________________
 ```
+### `list` - Displays a list of current tasks
+
+This command shows you the existing list of tasks.
+
+Format: `list`
+
+Example of usage: 
+
+`list`
+
+Expected outcome:
+```
+____________________________________________________________
+Here are the tasks in your list:
+1.[T][✘] study for CS2113T
+2.[D][✓] study (by:Fri 22 May 2020 03:30 pm)
+3.[E][✘] party (at:Sat 23 May 2020 12:30 am)
+____________________________________________________________
+
+```
+### `delete` - Deletes a task from the list
+
+Format: `delete <Task Number>`
+
+Example of usage:
+
+`delete 2`
+
+Expected outcome:
+```
+____________________________________________________________
+ Noted. I've removed this task: 
+  [D][✘] study (by:Fri 22 May 2020 03:30 pm)
+Now you have 4 task in the list
+____________________________________________________________
+```
+
+
+### `find` - Finds a Task that matches keyword
+
+Format: `find <keyword>`
+
+Example of usage:
