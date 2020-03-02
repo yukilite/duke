@@ -156,7 +156,9 @@ ____________________________________________________________
 ```
 
 
-### `bye` - Finds a Task that matches keyword
+### `bye` - Exits the program
+ 
+Upon exit, this command automatically saves the existing list of tasks in a file.
 
 Format: `bye`
 
