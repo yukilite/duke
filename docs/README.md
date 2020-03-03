@@ -157,13 +157,14 @@ Here are the tasks in your list:
 ____________________________________________________________
 
 ```
+
 ### `delete` - Deletes a task from the list
 
 This command allows the tasks to be deleted from the task list.
 
 Format: `delete <Task Number>`
 
-*`<task number>` represents a index of the task in the current task list
+* `<task number>` represents a index of the task in the current task list
 
 Example of usage:
 
@@ -177,6 +178,7 @@ ____________________________________________________________
 Now you have 4 task in the list
 ____________________________________________________________
 ```
+
 ### `find` - Finds a task with matching keyword
 
 This command finds a task in the existing task list with the same keyword.
