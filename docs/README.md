@@ -43,6 +43,7 @@ ____________________________________________________________
 >
 >**Notice:**
 >If created successfully, it appears as a `[T]` beside the description to represent a todo task.
+>`[✘]` represents an incomplete task.
 >
 
 ### `deadline` - Creates a Deadline task
@@ -75,6 +76,7 @@ ____________________________________________________________
 >
 >**Notice:**
 >If created successfully, it appears as a `[D]` beside the description to represent a deadline task.
+>`[✘]` represents an incomplete task.
 >
 
 ### `event` - Creates a Event task
