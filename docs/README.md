@@ -102,7 +102,7 @@ This command marks a task as Done, which displays as a `✓` beside the task.
 Format: 
 `done <task number>`
 
-*`<task number> represents a index of the task in the current task list
+*`<task number>` represents a index of the task in the current task list
 
 Example of usage: 
 
@@ -120,7 +120,7 @@ ____________________________________________________________
 
 This command shows you the existing list of tasks.
 
-Format: `list`
+Format: `<list>`
 
 Example of usage: 
 
@@ -160,7 +160,7 @@ ____________________________________________________________
  
 Upon exit, this command automatically saves the existing list of tasks in a file.
 
-Format: `bye`
+Format: `<bye>`
 
 Example of usage:
 `bye`
