@@ -102,7 +102,7 @@ ____________________________________________________________
 ```
 **Notice:**
 If created successfully, it appears as a `[E]` beside the description to represent an Event task.
-`[✘]` represents the task has not been completed.
+`[✘]` represents an incomplete task.
 
 ### `done` - Marks a task as completed
 
@@ -125,9 +125,10 @@ Nice! I've marked this task as done:
   [E][✓] study (by:Fri 22 May 2020 03:30 pm)
 ____________________________________________________________
 ```
-**Notice:**
-If created successfully, a `✓` appears beside the task.
-
+>
+>**Notice:**
+>If created successfully, a `✓` appears beside the task.
+>
 
 ### `list` - Displays a list of current tasks
 
