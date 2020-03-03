@@ -21,7 +21,6 @@ There are 3 ways you can add tasks to your task list, namely - todo, deadline or
 ### `todo` - Creates a Todo task
 
 This commands adds a todo task to your current list.
-It appears as a `[T]` beside the description to represent a todo task.
 
 Format:
 `todo <description>`
@@ -41,10 +40,14 @@ Got it. I've added this task:
 Now you have 1 task in the list
 ____________________________________________________________
 ```
+**Notice:**
+If created successfully, it appears as a `[T]` beside the description to represent a todo task.
+
+
 ### `deadline` - Creates a Deadline task
 
 This command is created with a description with a deadline date and time. 
-It appears as a `[D]` beside the description to represent a deadline task.
+
 
 Format: 
 `deadline <description><space></by><date><space><time>`
@@ -68,10 +71,12 @@ Got it. I've added this task:
 Now you have 2 task in the list
 ____________________________________________________________
 ```
+**Notice:**
+If created successfully, it appears as a `[D]` beside the description to represent a deadline task.
+
 ### `event` - Creates a Event task
 
 Similar to deadline feature, an event task is created with both the description parameter and a deadline date and time.
-It appears as a `[E]` beside the description to represent an event task.
 
 Format: 
 `event <event><space></at><date><space><time>`
@@ -95,9 +100,13 @@ Got it. I've added this task:
 Now you have 3 task in the list
 ____________________________________________________________
 ```
+**Notice:**
+If created successfully, it appears as a `[E]` beside the description to represent an Event task.
+`[✘]` represents the task has not been completed.
+
 ### `done` - Marks a task as completed
 
-This command marks a task as Done, which displays as a `✓` beside the task.
+This command marks an existing task as Done.
 
 Format: 
 `done <task number>`
@@ -116,6 +125,10 @@ Nice! I've marked this task as done:
   [E][✓] study (by:Fri 22 May 2020 03:30 pm)
 ____________________________________________________________
 ```
+**Notice:**
+If created successfully, a `✓` appears beside the task.
+
+
 ### `list` - Displays a list of current tasks
 
 This command shows you the existing list of tasks.
