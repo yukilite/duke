@@ -40,9 +40,10 @@ Got it. I've added this task:
 Now you have 1 task in the list
 ____________________________________________________________
 ```
-**Notice:**
-If created successfully, it appears as a `[T]` beside the description to represent a todo task.
-
+>
+>**Notice:**
+>If created successfully, it appears as a `[T]` beside the description to represent a todo task.
+>
 
 ### `deadline` - Creates a Deadline task
 
@@ -71,8 +72,10 @@ Got it. I've added this task:
 Now you have 2 task in the list
 ____________________________________________________________
 ```
-**Notice:**
-If created successfully, it appears as a `[D]` beside the description to represent a deadline task.
+>
+>**Notice:**
+>If created successfully, it appears as a `[D]` beside the description to represent a deadline task.
+>
 
 ### `event` - Creates a Event task
 
@@ -100,9 +103,11 @@ Got it. I've added this task:
 Now you have 3 task in the list
 ____________________________________________________________
 ```
-**Notice:**
-If created successfully, it appears as a `[E]` beside the description to represent an Event task.
-`[✘]` represents an incomplete task.
+>
+>**Notice:**
+>If created successfully, it appears as a `[E]` beside the description to represent an Event task.
+>`[✘]` represents an incomplete task.
+>
 
 ### `done` - Marks a task as completed
 
