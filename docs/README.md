@@ -118,7 +118,7 @@ This command marks an existing task as Done.
 Format: 
 `done <task number>`
 
-*`<task number>` represents a index of the task in the current task list
+* `<task number>` represents a index of the task in the current task list
 
 Example of usage: 
 
@@ -183,7 +183,7 @@ This command finds a task in the existing task list with the same keyword.
 
 Format: `find <Keyword>`
 
-*`<Keyword>` represents the name of the task you wish to look for in the current task list.
+* `<Keyword>` represents the name of the task you wish to look for in the current task list.
 
 Example of usage:
 
