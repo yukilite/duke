@@ -163,6 +163,8 @@ This command allows the tasks to be deleted from the task list.
 
 Format: `delete <Task Number>`
 
+*`<task number>` represents a index of the task in the current task list
+
 Example of usage:
 
 `delete 2`
@@ -175,7 +177,29 @@ ____________________________________________________________
 Now you have 4 task in the list
 ____________________________________________________________
 ```
+### `find` - Finds a task with matching keyword
 
+This command finds a task in the existing task list with the same keyword.
+
+Format: 
+
+`find <Keyword>`
+
+*`<Keyword>` represents the name of the task you wish to look for in the current task list.
+
+Example of usage:
+
+`find party`
+
+Expected outcome:
+
+```
+____________________________________________________________
+
+ Here are the matching tasks in your lists:
+1.[E][✘] party (at:Sat 23 May 2020 12:30 am)
+____________________________________________________________
+```
 
 ### `bye` - Exits the program
  
