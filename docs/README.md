@@ -5,7 +5,7 @@ Duke is a command-line interface task manager. You can manage your tasks, set de
 
 ## Features 
 1. Managing tasks 
-   Your tasks can be added and deleted using **todo**, **deadline** and **event** Commands.
+   Your tasks can be added and deleted using `todo`, `deadline` and `event` Commands.
 2. Marking your tasks as completed
    Track the completion status of your tasks by using the `done` Command.
 3. Display all your tasks 
