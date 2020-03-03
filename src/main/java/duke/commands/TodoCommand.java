@@ -22,6 +22,9 @@ public class TodoCommand extends Command {
         if (words.length == 1) {
             throw new DukeException(MESSAGE_TODO_DESCRIPTION_CANNOT_BE_EMPTY);
         }
+        else if (words[1].equals(" ") || (words[1].equals(""))) {
+            throw new DukeException(MESSAGE_TODO_DESCRIPTION_CANNOT_BE_EMPTY);
+        }
         Tasks task = new Todo(words[1].trim());
         taskList.addTasks(task);
         storage.writeFile(taskList);

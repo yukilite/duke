@@ -58,6 +58,7 @@ public class TaskList {
     }
 
     public static void find(String match) {
+        System.out.println(Messages.divider);
         System.out.println(Messages.MESSAGE_MATCHING_TASKS);
         int count = 0;
         for (int i = 0; i < list.size(); i++) {
@@ -66,6 +67,7 @@ public class TaskList {
                 count++;
             }
         }
+        System.out.println(Messages.divider);
     }
 
 }
