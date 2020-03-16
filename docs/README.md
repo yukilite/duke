@@ -1,4 +1,4 @@
-# User Guide
+# User Guide :negative_squared_cross_mark:
 
 ## Introduction
 Duke is a command-line interface task manager. You can manage your tasks, set deadlines and view upcoming tasks. The list is then saved automatically when you exit.
